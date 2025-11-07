@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WeatherX • Live Weather & Forecast</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Background overlay for readability -->
+  <div class="bg-overlay"></div>
+
+  <header class="container">
+    <div class="brand">
+      <span class="logo">☁️</span>
+      <h1>WeatherX</h1>
+    </div>
+    <div class="search">
+      <input id="cityInput" type="text" placeholder="Search city… (e.g., Ranchi)" aria-label="City"/>
+      <button id="searchBtn" class="btn">Search</button>
+      <button id="geoBtn" class="btn ghost" title="Use my location">📍</button>
+    </div>
+  </header>
+
+  <main class="container grid">
+    <!-- Current Weather Card -->
+    <section class="card current" id="currentCard">
+      <div class="left">
+        <h2 id="cityName">—</h2>
+        <p class="desc" id="description">Search a city to begin</p>
+        <div class="temp-wrap">
+          <img id="weatherIcon" class="icon" alt="icon" />
+          <div class="temps">
+            <div class="temp" id="temperature">--°C</div>
+            <div class="feels" id="feelsLike">Feels like —°C</div>
+          </div>
+        </div>
+        <div class="meta">
+          <span id="dateTime">—</span>
+        </div>
+      </div>
+
+      <div class="right stats">
+        <div class="stat">
+          <span>💧 Humidity</span>
+          <strong id="humidity">—%</strong>
+        </div>
+        <div class="stat">
+          <span>🍃 Wind</span>
+          <strong id="wind">— km/h</strong>
+        </div>
+        <div class="stat">
+          <span>🔻 Pressure</span>
+          <strong id="pressure">— hPa</strong>
+        </div>
+        <div class="stat">
+          <span>🌅 Sunrise</span>
+          <strong id="sunrise">—</strong>
+        </div>
+        <div class="stat">
+          <span>🌇 Sunset</span>
+          <strong id="sunset">—</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forecast -->
+    <section class="card forecast">
+      <h3>5-Day Forecast</h3>
+      <div id="forecast" class="forecast-grid"></div>
+    </section>
+  </main>
+
+  <!-- Loader -->
+  <div id="loader" class="loader hidden">
+    <div class="spinner"></div>
+    <p>Fetching weather…</p>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden">Message</div>
+
+<footer class="container footer">
+  <p>Data by OpenWeather • Made by Weather - X ⚡ | Owner: Rishi Kumar Karna</p>
+</footer>
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>
